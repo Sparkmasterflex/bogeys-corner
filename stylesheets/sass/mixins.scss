@@ -1,0 +1,68 @@
+@mixin border-radius($tl, $tr: null, $br: null, $bl: null) {
+  @if($tr == null) {
+    border-radius: $tl;
+    -webkit-border-radius: $tl;
+    -moz-border-radius: $tl;
+  } @else {
+    border-radius: $tl $tr $br $bl;
+    -webkit-border-radius: $tl $tr $br $bl;
+    -moz-border-radius: $tl $tr $br $bl;
+  }
+}
+
+@mixin speech-bubble {
+  &:before {
+    content:"";
+    position:absolute;
+    top: auto;
+    bottom:23px; /* value = - border-top-width - border-bottom-width */
+    left:-30px; /* controls horizontal position */
+    border: {
+      width: 15px 30px 15px 0;
+      style:solid;
+      color:transparent #333;
+    }
+    display:block; 
+    width:0;
+  } 
+  /* creates the smaller  triangle */
+  &:after {
+    content:"";
+    position: absolute;
+    top: auto;
+    bottom: 25px;
+    left: -26px;
+    border: {
+      width: 13px 26px 13px 0;
+      style: solid;
+      color: transparent #fff;
+    }
+    display:block; 
+    width:0;
+  }
+}
+
+@mixin box-shadow($x, $y, $blur, $color) {
+  box-shadow: $x $y $blur $color;
+  -webkit-box-shadow: $x $y $blur $color;
+  -moz-box-shadow: $x $y $blur $color;
+  -o-box-shadow: $x $y $blur $color;
+}
+
+@mixin no-shadow {
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  -o-box-shadow: none;
+}
+
+@mixin gradient-two($c1, $c2, $per1: 0%, $per2: 100%) {
+  background: $c1;
+  background: -moz-linear-gradient(top, $c1 $per1, $c2 $per2);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop($per1,$c1), color-stop($per2,$c2));
+  background: -webkit-linear-gradient(top, $c1 $per1,$c2 $per2);
+  background: -o-linear-gradient(top, $c1 $per1,$c2 $per2);
+  background: -ms-linear-gradient(top, $c1 $per1,$c2 $per2);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=$c1, endColorstr=$c2,GradientType=0 );
+  background: linear-gradient(top,$c1 $per1,$c2 $per2);
+}

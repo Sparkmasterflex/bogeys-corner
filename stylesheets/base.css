@@ -1,0 +1,355 @@
+@import "http://meyerweb.com/eric/tools/css/reset/reset.css";
+@import "http://fonts.googleapis.com/css?family=Monoton";
+@-webkit-keyframes light-sign {
+  0%, 40%, 65%, 80% {
+    color: #666;
+    text-shadow: 0 0 2px #999; }
+
+  30%, 60%, 75%, 100% {
+    color: #65ebff;
+    text-shadow: 0 0 10px #aef4ff; } }
+
+/*--------------------------- html5  ------------------*/
+header, section, footer, aside, nav, article, figure {
+  display: block; }
+
+/*--------------------------- Clearfix  ------------------*/
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0; }
+
+.clearfix {
+  display: inline-block; }
+
+/* start commented backslash hack \*/
+* html .clearfix {
+  height: 1%; }
+
+.clearfix {
+  display: block; }
+
+/* close commented backslash hack */
+.icon {
+  text-align: left;
+  margin: 0;
+  padding-left: 1.45em;
+  height: 1.15em; }
+
+.hidden {
+  text-indent: -9999px;
+  overflow: hidden; }
+
+.button {
+  display: block;
+  font-size: 1.8em;
+  width: 10em;
+  padding: 0.75em 0;
+  text-align: center;
+  color: #222;
+  border: 2px solid #333;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  background: #dddddd;
+  background: -moz-linear-gradient(top, #dddddd 0%, #eeeeee 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #dddddd), color-stop(100%, #eeeeee));
+  background: -webkit-linear-gradient(top, #dddddd 0%, #eeeeee 100%);
+  background: -o-linear-gradient(top, #dddddd 0%, #eeeeee 100%);
+  background: -ms-linear-gradient(top, #dddddd 0%, #eeeeee 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=$c1, endColorstr=$c2,GradientType=0 );
+  background: linear-gradient(top, #dddddd 0%, #eeeeee 100%);
+  box-shadow: -1px -1px 0 white;
+  -webkit-box-shadow: -1px -1px 0 white;
+  -moz-box-shadow: -1px -1px 0 white;
+  -o-box-shadow: -1px -1px 0 white;
+  clear: both;
+  text-shadow: 1px 1px 1px rgba(65, 65, 65, 0.5);
+  text-decoration: none; }
+  .button:hover {
+    background: #333;
+    color: #fff; }
+
+section {
+  width: 110em;
+  margin: 0 auto;
+  padding: 1em; }
+
+h3 {
+  font-size: 4.8em;
+  margin: 0.75em 0;
+  text-align: center;
+  text-shadow: 1px 1px 1px #999; }
+
+li, p, a {
+  font-size: 1.6em; }
+  li li, li p, li a, p li, p p, p a, a li, a p, a a {
+    font-size: 1em; }
+  li ul, p ul, a ul {
+    margin-left: 1.25em; }
+
+p {
+  line-height: 1.5em;
+  margin-bottom: 0.94em; }
+
+img {
+  border: 3px solid #444;
+  box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.65);
+  -webkit-box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.65);
+  -moz-box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.65);
+  -o-box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.65); }
+
+nav ul li {
+  float: left; }
+  nav ul li a {
+    padding: 0 1em;
+    color: #fff;
+    text-decoration: none; }
+    nav ul li a:hover {
+      color: #65ebff;
+      text-shadow: 0 0 10px #aef4ff; }
+
+body {
+  font-size: 62.5%;
+  font-family: "Trebuchet MS", Arial, san-serif;
+  background: url(images/stone_bg.jpg) repeat left top; }
+
+header {
+  height: 13em;
+  color: #fff; }
+  header hgroup {
+    position: relative;
+    width: 27.5em;
+    height: 13em;
+    background: url(images/logo.png) no-repeat left top;
+    float: left;
+    z-index: 3; }
+    header hgroup h1 {
+      color: #fff; }
+    header hgroup h2 {
+      position: absolute;
+      top: 2.5em;
+      font-size: 2.1em;
+      padding-left: 3.5em; }
+      header hgroup h2 span {
+        font-size: 1.71em;
+        font-family: 'Monoton', cursive;
+        display: block;
+        width: 100%;
+        text-indent: -1em;
+        color: #65ebff;
+        -webkit-animation: light-sign 1s 1;
+        text-shadow: 0 0 10px #aef4ff; }
+  header nav {
+    float: right;
+    width: 60em;
+    padding-top: 4.5em; }
+    header nav ul li a {
+      font-size: 1.5em; }
+
+#content {
+  background: #dddddd;
+  background: -moz-linear-gradient(top, #dddddd 0%, #f1f1f1 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #dddddd), color-stop(100%, #f1f1f1));
+  background: -webkit-linear-gradient(top, #dddddd 0%, #f1f1f1 100%);
+  background: -o-linear-gradient(top, #dddddd 0%, #f1f1f1 100%);
+  background: -ms-linear-gradient(top, #dddddd 0%, #f1f1f1 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=$c1, endColorstr=$c2,GradientType=0 );
+  background: linear-gradient(top, #dddddd 0%, #f1f1f1 100%); }
+  #content section {
+    position: relative; }
+    #content section #slider {
+      width: 99em;
+      margin: 0 auto 3em; }
+      #content section #slider img {
+        margin-right: 1em; }
+        #content section #slider img.last {
+          margin-right: 0; }
+    #content section a#slide-left,
+    #content section #slide-right {
+      display: block;
+      width: 60px;
+      height: 152px;
+      position: absolute;
+      top: 10.5em;
+      float: left; }
+      #content section a#slide-left:hover,
+      #content section #slide-right:hover {
+        background-position: center bottom; }
+    #content section a#slide-left {
+      background: url(images/slide-left-sprite.png) no-repeat center top;
+      left: -1.3em; }
+    #content section a#slide-right {
+      background: url(images/slide-right-sprite.png) no-repeat center top;
+      right: -0.85em; }
+    #content section #featured {
+      width: 100%;
+      padding: 0 0 2em; }
+      #content section #featured .col {
+        width: 33em;
+        float: left;
+        margin-right: 2em;
+        padding: 1em; }
+        #content section #featured .col.last {
+          margin-right: 0; }
+        #content section #featured .col#bogey {
+          width: 26em;
+          margin-left: 7.5em; }
+          #content section #featured .col#bogey .bubble {
+            padding: 2em;
+            position: relative;
+            background: #fff;
+            border: 1px solid #333;
+            border-radius: 10px;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            /* creates the smaller  triangle */ }
+            #content section #featured .col#bogey .bubble:before {
+              content: "";
+              position: absolute;
+              top: auto;
+              bottom: 23px;
+              /* value = - border-top-width - border-bottom-width */
+              left: -30px;
+              /* controls horizontal position */
+              border-width: 15px 30px 15px 0;
+              border-style: solid;
+              border-color: transparent #333;
+              display: block;
+              width: 0; }
+            #content section #featured .col#bogey .bubble:after {
+              content: "";
+              position: absolute;
+              top: auto;
+              bottom: 25px;
+              left: -26px;
+              border-width: 13px 26px 13px 0;
+              border-style: solid;
+              border-color: transparent #fff;
+              display: block;
+              width: 0; }
+            #content section #featured .col#bogey .bubble img {
+              margin: 0 3.5em 1em; }
+        #content section #featured .col h4 {
+          font-size: 2.4em;
+          margin-bottom: 1em;
+          text-align: center; }
+        #content section #featured .col #thumbs {
+          width: 8em;
+          float: left; }
+          #content section #featured .col #thumbs img {
+            margin-bottom: 0.5em; }
+          #content section #featured .col #thumbs + p {
+            float: right;
+            width: 14.5em; }
+        #content section #featured .col .bubble {
+          min-height: 24em; }
+        #content section #featured .col #thumbs {
+          min-height: 30em; }
+        #content section #featured .col.last p {
+          margin-top: 1.26em;
+          min-height: 10.1em; }
+      #content section #featured a.button {
+        margin: 1em auto 0; }
+    #content section img#bogey-img {
+      position: absolute;
+      bottom: 0;
+      left: -18em;
+      border: none;
+      box-shadow: none;
+      -webkit-box-shadow: none;
+      -moz-box-shadow: none;
+      -o-box-shadow: none; }
+
+body#about #content img {
+  float: right; }
+body#about #content p {
+  float: left;
+  width: 45%; }
+body#about #content #featured {
+  clear: both;
+  padding-top: 5em; }
+  body#about #content #featured img {
+    margin: 0 0.5em 0.5em; }
+  body#about #content #featured p {
+    width: 100%;
+    float: none; }
+
+body#contact #content form {
+  width: 40%;
+  float: left; }
+  body#contact #content form label {
+    display: block;
+    width: 100%;
+    font-size: 1.6em;
+    margin-bottom: 2em; }
+    body#contact #content form label span {
+      width: 9.38em;
+      display: block;
+      float: left; }
+    body#contact #content form label input {
+      float: left;
+      width: 12.5em;
+      padding: 0.13em 0.31em; }
+body#contact #content #rightcol {
+  width: 40%;
+  float: right; }
+
+footer {
+  height: 8em; }
+  footer nav {
+    margin-top: 1em;
+    width: 50em; }
+    footer nav ul li {
+      float: left; }
+      footer nav ul li a {
+        color: #fff;
+        padding: 0 1em; }
+
+@media (max-width: 1200px) {
+  section {
+    width: 108em; }
+
+  #content section #featured .col {
+    width: 32em; }
+    #content section #featured .col #thumbs + p {
+      width: 13.5em; }
+  #content section img#bogey-img {
+    left: -8em;
+    width: 20.5em;
+    height: 23.7em; } }
+@media (max-width: 1024px) {
+  section {
+    width: 96em; }
+
+  #content section h3 {
+    font-size: 4em; }
+  #content section #slider {
+    width: 66em; }
+  #content section a#slide-left {
+    left: 1em; }
+  #content section a#slide-right {
+    right: 1em; }
+  #content section p {
+    font-size: 1.4em; }
+  #content section #featured .col {
+    width: 28.5em; }
+    #content section #featured .col#bogey {
+      width: 23em;
+      margin-left: 5.5em; }
+    #content section #featured .col.last img {
+      width: 25em;
+      height: 7.6em; }
+    #content section #featured .col #thumbs img {
+      width: 75px;
+      height: 75px;
+      border: 2px solid #444; }
+    #content section #featured .col #thumbs + p {
+      width: 13.5em; }
+  #content section img#bogey-img {
+    left: -8em;
+    width: 20.5em;
+    height: 23.7em; } }
