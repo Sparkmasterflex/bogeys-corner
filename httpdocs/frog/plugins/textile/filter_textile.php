@@ -918,7 +918,7 @@ class Textile
 
 		$out = array(
 			($href) ? '<a href="' . $href . '">' : '',
-			'<img src="' . $url . '"' . $atts . ' />',
+			'<img src="/public/themes/normal/images/' . $url . '"' . $atts . ' />',
 			($href) ? '</a>' : ''
 		);
 

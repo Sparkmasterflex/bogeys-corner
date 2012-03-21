@@ -63,6 +63,5 @@
   background: -webkit-linear-gradient(top, $c1 $per1,$c2 $per2);
   background: -o-linear-gradient(top, $c1 $per1,$c2 $per2);
   background: -ms-linear-gradient(top, $c1 $per1,$c2 $per2);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=$c1, endColorstr=$c2,GradientType=0 );
   background: linear-gradient(top,$c1 $per1,$c2 $per2);
 }

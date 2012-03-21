@@ -14,6 +14,18 @@
   }
 }
 
+@-moz-keyframes light-sign {
+  0%, 40%, 65%, 80% {
+    color: #666;
+    text-shadow: 0 0 2px #999;
+  }
+  
+  30%, 60%, 75%, 100% {
+    color: #65ebff;
+    text-shadow: 0 0 10px #aef4ff;
+  }
+}
+
 /*--------------------------- html5  ------------------*/
 header, section, footer, aside, nav, article, figure { display: block; }
 
@@ -60,6 +72,7 @@ header, section, footer, aside, nav, article, figure { display: block; }
 section { width: 110em; margin: 0 auto; padding: 1em; }
 
 h3 { font-size: 4.8em; margin: 0.75em 0; text-align: center; text-shadow: 1px 1px 1px #999; }
+h4 { font-size: 2.4em; margin-bottom: 1em; }
 
 li, p, a { font-size: 1.6em;
   li, p, a { font-size: 1em; }
@@ -67,6 +80,11 @@ li, p, a { font-size: 1.6em;
 }
 
 p { line-height: 1.5em; margin-bottom: 0.94em; }
+a {
+  color: #444;
+  text: { decoration: underline; shadow: 1px 1px 1px rgba(101, 235, 255, 0.6); } 
+  &:hover { color: #444; text-decoration: none; }
+}
 
 img { border: 3px solid #444; @include box-shadow(0px, 0px, 3px, rgba(0,0,0,0.65)); }
 
@@ -75,7 +93,7 @@ nav ul {
     a {
       padding: 0 1em;
       color: #fff;
-      text-decoration: none;
+      text: { decoration: none; shadow: none; }
       &:hover { color: #65ebff; text-shadow: 0 0 10px #aef4ff; }
     }
   }
@@ -164,13 +182,13 @@ header {
             img { margin: 0 3.5em 1em; }
           }
         }
-        h4 { font-size: 2.4em; margin-bottom: 1em; text-align: center; }
+        h4 { text-align: center; }
         #thumbs {
           width: 8em;
           float: left;
           img { margin-bottom: 0.5em; }
-          & + p { float: right; width: 14.5em; }
         }
+        &.shop p { float: right; width: 14.5em; }
         .bubble { min-height: 24em; }
         #thumbs { min-height: 30em; }
         &.last p { margin-top: 1.26em; min-height: 10.1em; }
@@ -201,29 +219,94 @@ body#about #content {
 }
 
 body#contact #content {
-  form {
+  form, #thank-you {
     width: 40%;
     float: left;
     label {
       display: block;
       width: 100%;
       font-size: 1.6em;
-      margin-bottom: 2em;
+      margin-bottom: 0.75em;
       span {
         width: 9.38em;
+        padding: 0.31em 0;
         display: block;
         float: left;
       }
-      input {
+      input, textarea {
+        font-size: 1em;
         float: left;
-        width: 12.5em;
+        width: 17.2em;
         padding: 0.13em 0.31em;
+        border: 2px solid #444;
+        @include border-radius(2px);
+        &:focus { border-color: #999; background: #ccc; }
+      }
+      textarea { height: 5em; }      
+    }
+    input[type=submit] { float: right; margin-top: 1em; }
+  }
+  #rightcol {
+    width: 50%;
+    float: right;
+    ul { margin: 2em 2em 4em;
+      li {
+        font-size: 2.1em;
+        margin-bottom: 0.5em;
+        span { width: 4.38em; float: left; }
+        &.padding { padding-left: 4.38em; }
       }
     }
   }
-  #rightcol {
-    width: 40%;
+  #featured {
+    .col { width: 32em;
+      h4 { margin-top: 1em; }
+      ul { list-style: disc;
+        li { margin-bottom: 0.5em; 
+          ul { list-style: circle; li { margin: 0.25em 0; } }
+        }
+      }
+    }
+  }
+}
+
+body#featured #content {
+  .feature {
+    border: 2px solid #333;
+    @include border-radius(10px);
+    @include gradient-two(#ddd, #eee);
+    @include box-shadow(0, 0, 7px, rgba(0,0,0,0.65));
+    width: 65%;
+    float: left;
+    padding: 2em;
+    margin: 0 0 2em;
+    img { margin: 0.5em; float: left; }
+    p { clear: both; }
+  }
+  aside {
     float: right;
+    padding: 1em;
+    width: 27%;
+    background: url(images/stone_bg.jpg) repeat left top;
+    @include border-radius(5px);
+    border: {
+      top: 1px solid #555;
+      left: 1px solid #555;
+      bottom: 1px solid #999;
+      right: 1px solid #999;
+    }
+    h4 { color: #fff; }
+    ul {
+      li {
+        margin: 1em 0;
+        a {
+          font-size: 1.31em;
+          color: #65ebff;
+          text: { decoration: underline; shadow: 1px 1px 1px rgba(0, 0, 0, 0.65); } 
+          &:hover { color: #444; text-decoration: none; }
+        }
+      }
+    }
   }
 }
 
@@ -236,14 +319,102 @@ footer {
       a { color: #fff; padding: 0 1em; }
     }
   }
+  #copyright {
+    width: 100%;
+    clear: both;
+    p { color: #fff; }
+  }
 }
+
+#privacy-policy {
+  width: 60%;
+  height: 40em;
+  padding: 1em 2em;
+  overflow: auto;
+  margin: 0 auto;
+  background: #fff;
+  border: 1px solid #444;
+  p { font-size: 1.2em; color: #000; }
+}
+
+/*----- Shopping Cart ----*/
+#shop {
+  #content section {
+    a {
+      color: #444;
+      text: { decoration: underline; shadow: 1px 1px 1px rgba(101, 235, 255, 0.6); } 
+      &:hover { color: #444; text-decoration: none; }
+      &.button {
+        color: #222;
+        text: { decoration: none; shadow: 1px 1px 1px rgba(65, 65, 65, 0.5); }
+        &:hover { color: #fff; }
+      }
+    }
+    menu { list-style: none;
+      li { float: left; margin: 1em 0;
+        a { padding: 0 1em; } }
+    }
+    #hello {
+      float: right;
+      background: url(images/stone_bg.jpg) repeat left top;
+      margin-top: -1em;
+      padding: 0.5em 1em;
+      @include border-radius(0,0,7px,7px);
+      p {
+        float: left;
+        width: auto;
+        margin: 5px 20px 0 0;
+        color: #fff;
+        &.floatRight {
+          float: right; margin-right: 0;
+          a { color: #aef4ff; @include no-shadow; }
+        }
+      }
+    }
+    #total {
+      h3 { text-align: center; }
+      #checkout {
+        .button {
+          float: left;
+          line-height: 0;
+          margin-bottom: 15px;
+          &.checkout {
+            color: #222;
+            text: { decoration: none; shadow: 1px 1px 1px rgba(65, 65, 65, 0.5); }
+            border: 2px solid #333;
+            @include border-radius(10px);
+            @include gradient-two(#ddd, #eee);
+            @include box-shadow(-1px, -1px, 0, #fff);
+            &:hover { color: #fff; }
+          }
+        }
+      }
+    }
+    #buy {
+      width: 315px;
+      margin: 0 auto;
+      a.button { float: left; }
+    }
+    td.title {
+      h3 { text-align: left; a { font-size: 0.23em; } }
+    }
+  }
+  #summary {
+    width: 80em;
+    margin: 0 auto;
+    #images { width: 40em; }
+    #buy input.button { margin: 2em auto; }
+  }
+  footer nav { margin-bottom: 1em; }
+}
+
 
 @media(max-width: 1200px) {
   section { width: 108em; }
   #content section {
     #featured {
       .col { width: 32em;
-        #thumbs + p { width: 13.5em; }
+        &.shop p { width: 13.5em; }
       }
     }
     img#bogey-img {
@@ -266,10 +437,8 @@ footer {
       .col { width: 28.5em;
         &#bogey { width: 23em; margin-left: 5.5em; }
         &.last img { width: 25em; height: 7.6em; }
-        #thumbs {
-          img { width: 75px; height: 75px; border: 2px solid #444; }
-          &+ p { width: 13.5em; }
-        }
+        &.shop p { width: 13.5em; }
+        #thumbs img { width: 75px; height: 75px; border: 2px solid #444; }
       }
     }
     img#bogey-img {
@@ -280,9 +449,54 @@ footer {
   }
 }
 
-@media (max-devise-width: 768px) and (orientation: landscape) {
-  
+@media(max-width: 760px) /* (max-devise-width: 768px) and (orientation: landscape)*/ {
+  section { width: 60em; }
+  header section {
+    nav {
+      width: 20em;
+      float: right;
+      padding-top: 0;
+      ul li { float: none; }
+    }
+  }
+  #content section {
+    h3 { font-size: 2.4em; }
+    #slider { width: 42em; }
+    #featured {
+      .col {
+        width: 40em;
+        margin: 2em auto;
+        float: none;
+        &#bogey { width: inherit;
+          .bubble {
+            background: none;
+            min-height: 0;
+            width: 100%;
+            border: none;
+            &:before, &:after { display: none; }
+            img { float: left; }
+            p { width: 70%; }
+          }
+        }
+        &.shop {
+          #thumbs { width: 100%; min-height: 0; 
+            img { margin: 0 2.5em 1em; }
+          }
+          p { width: 100%; }
+        }
+        &.last { margin: 2em auto; }
+      }
+    }
+    img#bogey-img { display: none; }
+  }
 }
 
 @media (max-width: 600px) {
+  section { width: inherit; }
+  header section {
+    hgroup { background-image: url(images/logo_small.png); }
+  }
+  #content section {
+    #slider { width: 22em; }
+  }
 }
